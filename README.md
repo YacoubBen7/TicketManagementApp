@@ -23,7 +23,7 @@ Clone the repository and navigate into the project directory:
 
 ```bash
 git clone https://github.com/YacoubBen7/TicketManagementApp.git
-cd .\ManageTicketProject
+cd .\TicketManagementApp\
 ```
 
 ## Setting up the Frontend (Angular)
@@ -51,6 +51,8 @@ Start the Angular app:
 ```bash
 ng serve
 ```
+The application can be accessed locally via: [http://localhost:4200](http://localhost:4200)
+
 
 ### Optional: Running Tests
 
@@ -106,6 +108,8 @@ To run the backend application:
 ```bash
 dotnet run
 ```
+The backend can be accessed locally via Swagger at: [http://localhost:8010/swagger/index.html](http://localhost:8010/swagger/index.html)
+
 
 ### Optional: Running Backend Unit Tests
 
@@ -116,6 +120,4 @@ cd ..\TicketService.UnitTests\
 dotnet test
 ```
 
----
 
-Once these steps are complete, both the Angular frontend and .NET backend should be running and accessible locally.
