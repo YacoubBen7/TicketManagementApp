@@ -1,0 +1,46 @@
+<span class="p-text-secondary block mb-5"
+  >Edit your information for the ticket <span class="id-span" > {{ this.ticket.id }}</span></span
+>
+<form [formGroup]="formGroup" (ngSubmit)="formSubmit()">
+  <div class="field">
+    <label class="me-4" for="description">Status</label>
+    <p-dropdown
+      formControlName="status"
+      [options]="this.statusOptions"
+      placeholder="Select a City"
+    />
+
+    <small
+      id="status-error"
+      class="text-danger"
+      [hidden]="status!.valid || status!.pristine"
+    >
+      Enter a valid Status
+    </small>
+  </div>
+  <div class="field">
+    <label for="description">Description</label>
+    <textarea
+      rows="5"
+      cols="30"
+      pInputTextarea
+      formControlName="description"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    >
+    </textarea>
+    <small
+      id="description-error"
+      class="text-danger"
+      [hidden]="description!.valid || description!.pristine"
+    >
+      Enter a valid Description
+    </small>
+  </div>
+  <p-button
+    type="submit"
+    [disabled]="!formGroup.valid"
+    styleClass=" bg-primary  px-3 py-2 text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700"
+  >
+    Submit
+  </p-button>
+</form>

@@ -1,0 +1,25 @@
+<div class="container-xl	 mt-2">
+  <app-ticket-table
+    [tickets]="this.ticketsPage().data"
+    [loading]="this.loading()"
+    [first]="this.ticketsPage().pageIndex * this.ticketsPage().pageSize"
+    [totalRecords]="this.ticketsPage().totalCount"
+    (onPageChange)="OnPageChange($event)"
+    (onSortChange)="OnSortChange($event)"
+    (onFilterChange)="OnFilterChange($event)"
+    (onEdit)="OnEdit($event)"
+    (onDelete)="OnDelete($event)"
+    (onAdd)="OnAdd()"
+  />
+</div>
+<app-modal [(visible)]="visible" [header]="this.modalTitle">
+  <app-create-ticket
+    *ngIf="this.modalTitle.includes('Create')"
+    (formTicketSubmitter)="onTicketAdd($event)"
+  ></app-create-ticket>
+  <app-edit-ticket
+    *ngIf="this.modalTitle.includes('Edit')"
+    [ticket]="this.selectedTicket!"
+    (formTicketSubmitter)="onTicketEdit($event)"
+  ></app-edit-ticket>
+</app-modal>

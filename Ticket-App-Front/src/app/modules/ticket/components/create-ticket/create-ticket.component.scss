@@ -1,0 +1,9 @@
+p-button ::ng-deep .p-button {
+  background-color: #02a459 !important;
+  border: none;
+  border-radius: .2rem;
+}
+
+textarea:focus   {
+  border-color: #02a459 !important;
+}

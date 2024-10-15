@@ -1,0 +1,81 @@
+<p-table
+  [value]="tickets"
+  [loading]="loading"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [customSort]="true"
+  (sortFunction)="customSort($event)"
+>
+  <ng-template pTemplate="caption">
+    <div class="d-flex justify-content-end">
+      <input
+        pInputText
+        type="text"
+        placeholder="Search"
+        [formControl]="this.searchControl"
+      />
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="id">
+        Ticket Id
+        <p-sortIcon field="id"></p-sortIcon>
+      </th>
+      <th pSortableColumn="description">
+        Description
+        <p-sortIcon field="description"></p-sortIcon>
+      </th>
+      <th pSortableColumn="status">
+        Status
+        <p-sortIcon field="status"></p-sortIcon>
+      </th>
+      <th pSortableColumn="createdAt">
+        Date
+        <p-sortIcon field="createdAt"></p-sortIcon>
+      </th>
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-ticket>
+    <tr>
+      <td>{{ ticket.id }}</td>
+      <td>{{ ticket.description }}</td>
+      <td>{{ ticket.status }}</td>
+      <td>{{ ticket.createdAt | dateFormat }}</td>
+      <td>
+        <a href="javascript:void(0);" (click)="onEdit.emit(ticket.id)"
+          >Update</a
+        >
+        <a
+          class="ms-3"
+          href="javascript:void(0);"
+          (click)="onDelete.emit(ticket.id)"
+          >Delete</a
+        >
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td [colSpan]="5" class="text-center">There is no ticket</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <tr>
+      <td [colSpan]="5">
+        <p-button
+          label="Add New"
+          class="p-button-success"
+          (click)="onAdd.emit()"
+        />
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-paginator
+  (onPageChange)="onPaginatorChange($event)"
+  [first]="first"
+  [rows]="rows"
+  [totalRecords]="this.totalRecords"
+  [rowsPerPageOptions]="this.rowsPerPageOptions"
+/>

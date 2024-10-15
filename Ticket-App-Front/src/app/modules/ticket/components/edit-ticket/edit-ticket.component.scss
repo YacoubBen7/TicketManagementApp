@@ -1,0 +1,28 @@
+p-button ::ng-deep .p-button {
+  background-color: #02a459 !important;
+  border: none;
+  border-radius: .2rem;
+}
+
+textarea:focus {
+  border-color: #02a459 !important;
+}
+
+.id-span {
+  color: #02a459;
+  font-weight: bold;
+}
+
+p-dropdown ::ng-deep .p-dropdown-items {
+  padding: 0 !important;
+}
+
+::ng-deep li.p-highlight {
+  background-color: #02a459;
+  color: white;
+  /* Change to your desired background color */  /* Change to your desired border color */
+}
+::ng-deep div.p-inputwrapper:hover ,::ng-deep div.p-inputwrapper:focus {
+  border-color: #02a459 ;
+
+}

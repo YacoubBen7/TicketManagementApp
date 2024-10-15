@@ -1,0 +1,85 @@
+p-table ::ng-deep {
+  .p-datatable-thead th {
+    background-color: #02a459;
+    color: white;
+    border: 1px solid #f0f0f0;
+    font-weight: bold;
+  }
+
+  .p-datatable-tbody td,
+  .p-datatable-tfoot td {
+    border: 1px solid #f0f0f0;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border: 1px solid #e6e6e6;
+  }
+
+  .p-datatable-header {
+    background-color: #e8e7e7;
+    border-radius: 5px;
+  }
+
+  .p-datatable-tbody tr:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+
+  tr td .p-button {
+    background-color: #02a459;
+    border: none;
+    border-radius: .2rem;
+  }
+
+  .p-datatable-loading-overlay {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .p-datatable-loading-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  input[type="text"]:focus,
+  input[type="text"]:hover {
+    border-color: #02a459;
+    box-shadow: 0 0 0 0.2rem rgba(2, 164, 89, 0.25);
+  }
+
+
+}
+
+
+
+p-paginator ::ng-deep {
+  .p-paginator {
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+  }
+
+  p-sorticon svg {
+    color: white;
+  }
+
+  .p-paginator-page.p-highlight {
+    background-color: #02a459;
+    ;
+    color: white;
+    border: 1px solid #02a459;
+    ;
+    border-radius: 4px;
+  }
+
+  .p-dropdown-items {
+    padding: 0 !important;
+  }
+
+  div.p-inputwrapper:hover {
+    border-color: #02a459 !important;
+  }
+
+  li.p-highlight {
+    background-color: #02a459;
+    color: white;
+
+  }
+}
